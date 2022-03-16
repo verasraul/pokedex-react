@@ -1,4 +1,4 @@
-function Header(props) {
+function Header() {
     return (
         <nav className="nav-wrapper">
             <div className="container">
