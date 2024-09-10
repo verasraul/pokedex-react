@@ -42,10 +42,11 @@ const fetchData = async () => {
             {(pokemons || []).map((pokemon, index) => {
                 // deconstruct the name and url key from the pokemon argument for each pockemon object
                 const { name, url } = pokemon;
-                return <Pokemon name={name} url={url} key={index} />;
-            })}
+                return (
+                <Pokemon name={name} url={url} key={index} />;
+            )})}
         </ul>
-            </>
+        </>
     )
 }
 
