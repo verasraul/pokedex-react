@@ -31,8 +31,9 @@ const fetchPokemonInfo = async (name) => {
     console.log(name)
     try { 
         const response = await axios.get(`${CLIENT_URL}/${name}`); // Fetch Pokémon details from the provided URL
-        const results = response.data;
-        setSelectedPokemonInfo(results); // Save the fetched data to state
+        const data = response.data;
+        setSelectedPokemonInfo(data); // Save the fetched data to state
+
     } catch (error) {
         console.log(error);
     }
@@ -72,7 +73,8 @@ useEffect(() => {
                     <p><strong>Height:</strong> {selectedPokemonInfo.height}</p>
                     <p><strong>Weight:</strong> {selectedPokemonInfo.weight}</p>
                     <p><strong>Base Experience:</strong> {selectedPokemonInfo.base_experience}</p>
-                    <h3>Top Moves:</h3> 
+                    
+                    <h2>Top Moves:</h2>
                     <ul>
                         {selectedPokemonInfo.moves.map((moveobj, index) => (
                             <li key={index}>{moveobj.move.name} </li>
