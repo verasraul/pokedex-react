@@ -67,12 +67,15 @@ useEffect(() => {
 
             {/* Render the selected Pokemon's detailed data if available */}
             {selectedPokemonInfo && (
-                <div style={{marginTop: 25}}>
+                <div className="pokemon details" style={{marginTop: 25}}>
                     <h2>Selected Pokemon Details</h2>
                     <p><strong>Name:</strong> {selectedPokemonInfo.name}</p>
                     <p><strong>Height:</strong> {selectedPokemonInfo.height}</p>
                     <p><strong>Weight:</strong> {selectedPokemonInfo.weight}</p>
                     <p><strong>Base Experience:</strong> {selectedPokemonInfo.base_experience}</p>
+                    <p><strong>Poke Cry:</strong></p>
+                        <audio controls src={selectedPokemonInfo.cries.latest}></audio>
+                        <a href={selectedPokemonInfo.cries.latest}>Download Audio</a>
                     
                     <h2>Top Moves:</h2>
                     <ul>
