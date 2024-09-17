@@ -33,7 +33,6 @@ const fetchPokemonInfo = async (name) => {
         const response = await axios.get(`${CLIENT_URL}/${name}`); // Fetch Pokémon details from the provided URL
         const data = response.data;
         setSelectedPokemonInfo(data); // Save the fetched data to state
-
     } catch (error) {
         console.log(error);
     }
